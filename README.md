@@ -2,13 +2,11 @@
 
 A full-stack TypeScript setup demonstrating end-to-end type safety with Hono backend and TanStack Start frontend.
 
-## Architecture
+## The Stack
 
-**Backend** (`server/`) - Hono with OpenAPI/Zod validation, auto-generated Swagger docs  
-**Frontend** (`src/`) - TanStack Start with React Query for data fetching  
-**Bridge** (`src/routes/api/$.ts`) - Proxies all API requests to Hono server  
+Hono backend with Zod validation and OpenAPI docs. TanStack Start frontend with React Query. They connect through `src/routes/api/$.ts` which proxies requests to the Hono server.
 
-Type safety flows from Hono routes → exported `App` type → `hc` client → React Query.
+Types flow from Hono routes → exported `App` type → client → React Query.
 
 ## Why Hono
 
